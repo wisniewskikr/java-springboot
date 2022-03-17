@@ -5,7 +5,9 @@ DESCRIPTION
 The goal of this project is to present how to run simple "Hello World" Java Spring Boot application with template Thymeleaf using Docker tool.
 
 ##### Details
-Example application consists of one page with displays text: "Hello World".
+Details:
+* Example application will display on browser simple page with text: "Hello World"; 
+* Example application will be builded and started by Docker tool. More information about this tool you can find here: https://docs.google.com/document/d/1tKdfZIrNhTNWjlWcqUkg4lteI91EhBvaj6VDrhpnCnk/edit?usp=sharing
 
 
 PRECONDITIONS
