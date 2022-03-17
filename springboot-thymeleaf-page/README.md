@@ -7,12 +7,6 @@ The goal of this project is to present how to create simple "Hello World" Java S
 ##### Details
 Example application consists of one page with displays text: "Hello World".
 
-##### Technologies
-Used technologies:
-* Java
-* Maven
-* Git
-
 
 PRECONDITIONS
 -------------
