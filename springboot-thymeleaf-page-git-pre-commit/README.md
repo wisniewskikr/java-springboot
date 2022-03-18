@@ -30,12 +30,12 @@ Usage steps:
 
 ##### Ad 1\ Start application
 
-Please open any command line tool on **root** folder of this project and type following command there: 
+Please open any command line tool on **root** folder of this project and type following command there:
 * **mvn spring-boot:run**
 
 ##### Ad 2\ Display page
 
-Please open any **browser** and type following URL there: 
+Please open any **browser** and type following URL there:
 * **http://localhost:8080**
 
 ##### Ad 3\ Clean up
