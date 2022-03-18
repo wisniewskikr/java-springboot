@@ -13,10 +13,10 @@ public class GreetingController {
 
 	@RequestMapping(value="/greeting", method = RequestMethod.GET)
 	public String greeting(@ModelAttribute("command") GreetingCommand command) {
-		
+
 		command.setText("Hello World!");
 		return "greeting/greeting";
-		
+
 	}
-	
+
 }

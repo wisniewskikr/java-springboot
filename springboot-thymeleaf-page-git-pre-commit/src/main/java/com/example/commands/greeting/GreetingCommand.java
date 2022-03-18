@@ -1,7 +1,7 @@
 package com.example.commands.greeting;
 
 public class GreetingCommand {
-	
+
 	private String text;
 
 	public String getText() {
@@ -9,6 +9,6 @@ public class GreetingCommand {
 	}
 	public void setText(String text) {
 		this.text = text;
-	}	
-	
+	}
+
 }

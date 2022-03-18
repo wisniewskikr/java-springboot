@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class InitController {
 
 	@RequestMapping(value="/", method = RequestMethod.GET)
-	public String greeting() {		
+	public String greeting() {
 		return "redirect:greeting";
 	}
-	
+
 }
