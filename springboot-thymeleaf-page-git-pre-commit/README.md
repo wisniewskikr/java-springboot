@@ -55,15 +55,21 @@ Please type following commands in opened command line tool:
 
 Please type following command in opened command line tool:
 * **pre-commit run**
+* **git add .**
+* **git status**
+* **pre-commit run**
 
-Expected result:
+Expected result: **First** pre-commit failed and fixed. **Second** pre-commit passed.
 
 ##### Ad 5\ Commit changes
 
 Please type following command in opened command line tool:
 * **git commit -m "Init tmp project"**
+* **git add .**
+* **git status**
+* **git commit -m "Init tmp project"**
 
-Expected result:
+Expected result: **First** pre-commit failed and fixed. **Second** pre-commit passed.
 
 ##### Ad 6\ Clean up
 Please type following commands in opened command line tool:
