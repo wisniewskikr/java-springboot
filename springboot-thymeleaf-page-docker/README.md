@@ -6,8 +6,8 @@ The goal of this project is to present how to run simple "Hello World" Java Spri
 
 ##### Details
 Details:
-* Example application will display on browser simple page with text: "Hello World"; 
 * Example application will be builded and started by Docker tool. More information about this tool you can find here: https://docs.google.com/document/d/1tKdfZIrNhTNWjlWcqUkg4lteI91EhBvaj6VDrhpnCnk/edit?usp=sharing
+* Example application will display on browser simple page with text: "Hello World"; 
 
 
 PRECONDITIONS
