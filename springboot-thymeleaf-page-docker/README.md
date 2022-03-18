@@ -32,9 +32,10 @@ Usage steps:
 2. Build image
 3. Build and start container
 4. Display page
-5. Stop container
-6. Remove container
-7. Remove image
+5. Display container logs (optional)
+6. Stop container
+7. Remove container
+8. Remove image
 
 ##### Ad 1\ Build package
 
@@ -56,17 +57,22 @@ Please type following command in opened command line tool:
 Please open any **browser** and type following URL there: 
 * **http://localhost:8080**
 
-##### Ad 5\ Stop container
+##### Ad 5\ Display container logs (optional)
+
+Please type following command in opened command line tool: 
+* **docker logs greeting-container**
+
+##### Ad 6\ Stop container
 
 Please type following command in opened command line tool: 
 * **docker stop greeting-container**
 
-##### Ad 6\ Remove container
+##### Ad 7\ Remove container
 
 Please type following command in opened command line tool: 
 * **docker rm greeting-container**
 
-##### Ad 6\ Remove image
+##### Ad 8\ Remove image
 
 Please type following command in opened command line tool: 
 * **docker rmi greeting-image**
