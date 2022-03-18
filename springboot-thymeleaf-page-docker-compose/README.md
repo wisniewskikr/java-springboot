@@ -2,12 +2,13 @@ DESCRIPTION
 -----------
 
 ##### Goal
-The goal of this project is to present how to run simple "Hello World" Java Spring Boot application with template Thymeleaf using Docker tool.
+The goal of this project is to present how to run simple "Hello World" Java Spring Boot application with template Thymeleaf using Docker Compose tool.
 
 ##### Details
 Details:
+* Example application will be builded and started by Docker Compose tool. More information about this tool you can find here: https://docs.google.com/document/d/1SPrCS5OS_G0je_wmcLGrX8cFv7ZkQbb5uztNc9kElS4/edit?usp=sharing
 * Example application will display on browser simple page with text: "Hello World"; 
-* Example application will be builded and started by Docker tool. More information about this tool you can find here: https://docs.google.com/document/d/1tKdfZIrNhTNWjlWcqUkg4lteI91EhBvaj6VDrhpnCnk/edit?usp=sharing
+
 
 
 PRECONDITIONS
@@ -29,44 +30,26 @@ USAGE
 
 Usage steps:
 1. Build package
-2. Build image
-3. Build and start container
+2. Start by Docker Compose
 4. Display page
-5. Stop container
-6. Remove container
-7. Remove image
+5. Clean up
 
 ##### Ad 1\ Build package
 
 Please open any command line tool on **root** folder of this project and type following command there: 
 * **mvn clean package**
 
-##### Ad 2\ Build image
+##### Ad 2\ Start by Docker Compose
 
 Please type following command in opened command line tool: 
-* **docker build -t greeting-image .**
+* **docker-compose up -d --build**
 
-##### Ad 3\ Build and start container
-
-Please type following command in opened command line tool: 
-* **docker run -d -p 8080:8080 --name greeting-container greeting-image**
-
-##### Ad 4\ Display page
+##### Ad 3\ Display page
 
 Please open any **browser** and type following URL there: 
 * **http://localhost:8080**
 
-##### Ad 5\ Stop container
+##### Ad 4\ Clean up
 
 Please type following command in opened command line tool: 
-* **docker stop greeting-container**
-
-##### Ad 6\ Remove container
-
-Please type following command in opened command line tool: 
-* **docker rm greeting-container**
-
-##### Ad 6\ Remove image
-
-Please type following command in opened command line tool: 
-* **docker rmi greeting-image**
+* **docker-compose down --rmi all**

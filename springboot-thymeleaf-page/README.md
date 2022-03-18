@@ -17,7 +17,7 @@ PRECONDITIONS
 * Installed Git
 
 ##### Preconditions - Actions
-* **Download Source Code**: please open any command line tool on **target** folder (where project should be downloaded) and type following command there: **git clone https://github.com/wisniewskikr/java-templates.git**
+* **Download Source Code**: please open any command line tool on **target** folder (where project should be downloaded) and type following command there: **git clone https://github.com/wisniewskikr/java-springboot.git**
 
 
 USAGE
