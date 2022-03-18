@@ -32,7 +32,8 @@ Usage steps:
 1. Build package
 2. Start by Docker Compose
 4. Display page
-5. Clean up
+5. Display logs (optional)
+6. Clean up
 
 ##### Ad 1\ Build package
 
@@ -49,7 +50,12 @@ Please type following command in opened command line tool:
 Please open any **browser** and type following URL there: 
 * **http://localhost:8080**
 
-##### Ad 4\ Clean up
+##### Ad 4\ Display logs (optional)
+
+Please type following command in opened command line tool: 
+* **docker-compose logs greeting**
+
+##### Ad 5\ Clean up
 
 Please type following command in opened command line tool: 
 * **docker-compose down --rmi all**
