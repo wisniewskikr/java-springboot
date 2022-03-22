@@ -1,19 +1,19 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: greeting
+  name: greeting-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: greeting
+      app: greeting-container
   template:
     metadata:
       labels:
-        app: greeting
+        app: greeting-container
     spec:
       containers:
-        - name: greeting
+        - name: greeting-container
           image: localhost:5000/greeting-image
           imagePullPolicy: Always
           ports:
@@ -33,7 +33,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: greeting
+  name: greeting-service
 spec:
   type: NodePort
   ports:
@@ -42,4 +42,4 @@ spec:
       protocol: TCP
       nodePort: 31000
   selector:
-    app: greeting
+    app: greeting-container
