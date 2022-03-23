@@ -29,7 +29,7 @@ USAGE
 
 1. Build package with `mvn clean package`
 2. Build image with `docker build -t greeting-image .`
-3. Build and start container with `docker run -d -p 8080:8080 -v ${PWD}/configs/:/configs --name greeting-container greeting-image`
+3. Build and start container with `docker run -d -p 8080:8080 -v /volume:/config --name greeting-container greeting-image`
 4. Visit `http://localhost:8080`
 5. Display container logs (optional)
 
