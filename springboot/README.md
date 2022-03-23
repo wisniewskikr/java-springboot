@@ -5,7 +5,7 @@ DESCRIPTION
 The goal of this project is to present how to create simple "Hello World" Java Spring Boot application.
 
 ##### Details
-Example application displays text: "Hello World".
+This example application displays text: "Hello World".
 
 
 PRECONDITIONS

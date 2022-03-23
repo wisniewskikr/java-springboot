@@ -5,7 +5,7 @@ DESCRIPTION
 The goal of this project is to present how to create simple "Hello World" Java Spring Boot application with template Thymeleaf.
 
 ##### Details
-Example application consists of one page with displays text: "Hello World".
+This example application displays html page with text: "Hello World".
 
 
 PRECONDITIONS
@@ -17,27 +17,13 @@ PRECONDITIONS
 * Installed Git
 
 ##### Preconditions - Actions
-* **Download Source Code**: please open any command line tool on **target** folder (where project should be downloaded) and type following command there: **git clone https://github.com/wisniewskikr/java-springboot.git**
+* Download Source Code with `git clone https://github.com/wisniewskikr/java-springboot.git`
 
 
 USAGE
 -----
 
 Usage steps:
-1. Start application
-2. Display page
-3. Clean up
-
-##### Ad 1\ Start application
-
-Please open any command line tool on **root** folder of this project and type following command there: 
-* **mvn spring-boot:run**
-
-##### Ad 2\ Display page
-
-Please open any **browser** and type following URL there: 
-* **http://localhost:8080**
-
-##### Ad 3\ Clean up
-To clean up this project please:
-* Please go to command line tool from **Step 1** and type following command there: **ctrl + C**. Then please close this command line tool.
+1. Start application with `mvn spring-boot:run`
+2. Visit `http://localhost:8080`
+3. Clean up environment with `ctrl + C`
