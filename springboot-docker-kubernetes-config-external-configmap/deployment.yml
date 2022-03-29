@@ -28,6 +28,17 @@ spec:
               path: /actuator/health
               port: 8080
             initialDelaySeconds: 5
+          volumeMounts:
+          - name: greeting-volume 
+            mountPath: "/config" 
+            readOnly: true
+      volumes:
+      - name: greeting-volume
+        configMap:
+          name: greeting-configmap
+          items:
+          - key: application.properties 
+            path: application.properties
       restartPolicy: Always
 ---
 kind: Service
