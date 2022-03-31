@@ -32,7 +32,7 @@ Usage steps:
 1. Create local registry with `docker run -d -p 5000:5000 --restart=always --name registry-container registry:2`
 2. Build package with `mvn clean package`
 3. Build image with `docker build -t greeting-image .`
-4. Tag the Docker image with `docker tag greeting-image localhost:5000/greeting-image*`
+4. Tag the Docker image with `docker tag greeting-image localhost:5000/greeting-image`
 5. Push Docker image to local registry with `docker push localhost:5000/greeting-image`
 6. Deploy application to Kubernetes with `kubectl apply -f deployment.yml`
 7. Visit `http://localhost:31000`

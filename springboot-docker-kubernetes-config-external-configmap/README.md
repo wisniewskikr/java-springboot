@@ -28,18 +28,23 @@ PRECONDITIONS
 USAGE
 -----
 
-1. Build package with `mvn clean package`
-2. Build image with `docker build -t greeting-image .`
-3. Build and start container with:
-    * **GIT Console on Windows: ** `MSYS_NO_PATHCONV=1 docker run -d -p 8080:8080 -v ${PWD}/config/application.properties:/config/application.properties --name greeting-container greeting-image`
-    * **Windows PowerShell:** `docker run -d -p 8080:8080 -v ${PWD}/config/application.properties:/config/application.properties --name greeting-container greeting-image`
-4. Visit `http://localhost:8080`
-5. Display container logs (optional)
+Usage steps:
 
-    * Display logs with `docker logs greeting-container`
-    * Stop displaying logs with `ctrl + c`
-6. Clean up environment:
+1. Create local registry with `docker run -d -p 5000:5000 --restart=always --name registry-container registry:2`
+2. Build package with `mvn clean package`
+3. Build image with `docker build -t greeting-image .`
+4. Tag the Docker image with `docker tag greeting-image localhost:5000/greeting-image`
+5. Push Docker image to local registry with `docker push localhost:5000/greeting-image`
+6. Deploy configmap to Kubernetes with `kubectl apply -f configmap.yml`
+7. Deploy application to Kubernetes with `kubectl apply -f deployment.yml`
+8. Visit `http://localhost:31000`
+9. Clean up environment:
 
-    * Stop container with `docker stop greeting-container`
-    * Remove container with `docker rm greeting-container`
+    * Delete Kubernetes service with `kubectl delete service greeting-service`
+    * Delete Kubernetes deployment with `kubectl delete deployment greeting-deployment`
+    * Delete Kubernetes configmap with `kubectl delete configmap greeting-configmap`
+    * Stop registry with `docker stop registry-container`
+    * Remove registry with `docker rm registry-container`
+    * Remove tagged image with `docker rmi localhost:5000/greeting-image`
     * Remove image with `docker rmi greeting-image`
+    * Remove registry image with `docker rmi registry:2`
