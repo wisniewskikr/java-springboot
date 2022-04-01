@@ -35,9 +35,13 @@ Usage steps:
 4. Tag the Docker image with `docker tag greeting-image localhost:5000/greeting-image`
 5. Push Docker image to local registry with `docker push localhost:5000/greeting-image`
 6. Deploy application to Kubernetes with `kubectl apply -f deployment.yml`
-7. Check logs (optional)
+7. Check deployment (optional)
 
-    * Display pods list with `kubectl get pods`
+    * Display list of deployments with `kubectl get deployments`
+    * Display describe for specific deployment with `kubectl describe deployment greeting-deployment`
+7. Check pod`s logs (optional)
+
+    * Display list of pods with `kubectl get pods`
     * Display log for specific pod with `kubectl logs <pod_id>`
 8. Visit `http://localhost:31000`
 9. Clean up environment:
