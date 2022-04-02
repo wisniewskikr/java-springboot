@@ -42,6 +42,7 @@ Usage steps:
 7. Check pod`s logs (optional)
 
     * Display list of pods with `kubectl get pods`
+    * Display describe for specific pod with `kubectl describe pod <pod_id>`
     * Display log for specific pod with `kubectl logs <pod_id>`
 8. Visit `http://localhost:31000`
 9. Clean up environment:
