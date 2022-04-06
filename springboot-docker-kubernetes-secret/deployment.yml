@@ -28,6 +28,12 @@ spec:
               path: /actuator/health
               port: 8080
             initialDelaySeconds: 5
+          env:
+          - name: secret-message
+            valueFrom:
+              secretKeyRef:
+                name: greeting-secret
+                key: secret-message
           volumeMounts:
           - name: secret-volume 
             mountPath: "/secret" 
@@ -38,7 +44,7 @@ spec:
           secretName: greeting-secret
           items:
           - key: secret-message 
-            path: secret.properties
+            path: secret-message
       restartPolicy: Always
 ---
 kind: Service
