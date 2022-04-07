@@ -43,22 +43,11 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: greeting-configmap
-                key: message_exclamation
-          volumeMounts:
-          - name: greeting-volume 
-            mountPath: "/config" 
-            readOnly: true
+                key: message_exclamation       
       volumes:
       - name: greeting-volume
         configMap:
           name: greeting-configmap
-          items:
-          - key: message_hello 
-            path: message_hello
-          - key: message_world 
-            path: message_world
-          - key: message_exclamation 
-            path: message_exclamation
       restartPolicy: Always
 ---
 kind: Service
