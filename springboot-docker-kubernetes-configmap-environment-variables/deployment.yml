@@ -33,17 +33,17 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: greeting-configmap
-                key: message_hello
+                key: message_hello_prop
           - name: message_world
             valueFrom:
               configMapKeyRef:
                 name: greeting-configmap
-                key: message_world
+                key: message_world_prop
           - name: message_exclamation
             valueFrom:
               configMapKeyRef:
                 name: greeting-configmap
-                key: message_exclamation       
+                key: message_exclamation_prop       
       volumes:
       - name: greeting-volume
         configMap:
