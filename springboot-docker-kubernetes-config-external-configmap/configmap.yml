@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: greeting-configmap
-data:
-  application.properties: message=Hello World!

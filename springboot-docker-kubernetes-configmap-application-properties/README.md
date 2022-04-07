@@ -2,12 +2,12 @@ DESCRIPTION
 -----------
 
 ##### Goal
-The goal of this project is to present how to use external configuration file - so called **configmap** - in simple "Hello World" Java Spring Boot application using Kubernetes tool.
+The goal of this project is to present how to use **application.properties** file as configuration file - so called **configmap** - in simple "Hello World" Java Spring Boot application using Kubernetes tool.
 
 
 ##### Details
-* External configuration means that configuration file is not included in application. It's very flexible solution because developer can very easly update configuration files
-* This example application just displays text: "Hello World". This text is stored in `application.properties` file. But this file is not in resources so Spring Boot does not see it by default. You have to mount it using "configmap" in Kubernetes tool 
+* File application.properties as external configuration means that this file is not included in the application. It's very flexible solution because developer can very easy update in Kubernetes tool
+* This example application just displays text: "Hello World!". This text is stored in `application.properties` file as three properties. But this file is not stored in resources folder so Spring Boot does not see it by default. You have to mount it using "configmap" in Kubernetes tool 
 * More information about Kubernetes tool you can find here: `https://docs.google.com/document/d/1jOsK3Lkbkoq-Xx7Ln9o_ozCt6XpcSElOwu1o2AfQnNc/edit?usp=sharing`
 
 
