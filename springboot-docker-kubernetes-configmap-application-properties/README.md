@@ -28,6 +28,8 @@ PRECONDITIONS
 USAGE - YML FILE
 ----------------
 
+Configmap is provided as yml file.
+
 Usage steps:
 
 1. Create local registry with `docker run -d -p 5000:5000 --restart=always --name registry-container registry:2`
@@ -65,6 +67,8 @@ Usage steps:
 
 USAGE - COMMAND LINE
 --------------------
+
+Configmap is created by command in command line.
 
 Usage steps:
 
