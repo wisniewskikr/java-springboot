@@ -7,12 +7,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
 
-	@Value(value = "${secret-message:}")
-	private String secretMessage;
+	@Value(value = "${secret_message_hello}")
+	private String secretMessageHello;
+	
+	@Value(value = "${secret_message_world}")
+	private String secretMessageWorld;
+	
+	@Value(value = "${secret_message_exclamation}")
+	private String secretMessageExclamation;
 
 	@RequestMapping(value="/")
 	public String greeting() {		
-		return !"".equals(secretMessage) ? secretMessage : "Can not read secret message from secrets!";
+		return secretMessageHello + " " + secretMessageWorld + secretMessageExclamation;
 	}
 	
 }

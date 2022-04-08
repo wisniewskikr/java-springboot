@@ -29,22 +29,25 @@ spec:
               port: 8080
             initialDelaySeconds: 5
           env:
-          - name: secret-message
+          - name: secret_message_hello
             valueFrom:
               secretKeyRef:
                 name: greeting-secret
-                key: secret-message
-          volumeMounts:
-          - name: secret-volume 
-            mountPath: "/secret" 
-            readOnly: true
+                key: secret_message_hello_prop
+          - name: secret_message_world
+            valueFrom:
+              secretKeyRef:
+                name: greeting-secret
+                key: secret_message_world_prop
+          - name: secret_message_exclamation
+            valueFrom:
+              secretKeyRef:
+                name: greeting-secret
+                key: secret_message_exclamation_prop
       volumes:
       - name: secret-volume
         secret:
           secretName: greeting-secret
-          items:
-          - key: secret-message 
-            path: secret-message
       restartPolicy: Always
 ---
 kind: Service
