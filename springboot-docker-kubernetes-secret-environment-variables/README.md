@@ -2,7 +2,7 @@ DESCRIPTION
 -----------
 
 ##### Goal
-The goal of this project is to present how to use **secrets** in simple "Hello World" Java Spring Boot application using Kubernetes tool.
+The goal of this project is to present how to use **secrets** as **environment variables** in simple "Hello World" Java Spring Boot application using Kubernetes tool.
 
 
 ##### Details

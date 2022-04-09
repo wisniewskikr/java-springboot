@@ -9,7 +9,7 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>springboot-docker-kubernetes-secret</artifactId>
+	<artifactId>springboot-docker-kubernetes-secret-environment-variables</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 
 	<properties>
