@@ -5,12 +5,10 @@ public class TextResponse {
 	
 	private String text;
 	private String port;
-	private String version;
 	
-	public TextResponse(String text, String port, String version) {
+	public TextResponse(String text, String port) {
 		this.text = text;
 		this.port = port;
-		this.version = version;
 	}
 	
 	public String getText() {
@@ -26,14 +24,5 @@ public class TextResponse {
 	public void setPort(String port) {
 		this.port = port;
 	}
-	
-	public String getVersion() {
-		return version;
-	}
-	public void setVersion(String version) {
-		this.version = version;
-	}
-	
-	
 	
 }

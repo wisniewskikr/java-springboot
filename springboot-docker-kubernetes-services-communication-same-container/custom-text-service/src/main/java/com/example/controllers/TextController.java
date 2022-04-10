@@ -10,8 +10,6 @@ import com.example.responses.TextResponse;
 
 @RestController
 public class TextController {
-
-	private static final String VERSION = "1";
 	
 	private Environment environment;	
 	
@@ -24,7 +22,7 @@ public class TextController {
 	public TextResponse provideText() {
 		
 		String port = environment.getProperty("local.server.port");
-		return new TextResponse("Hello World!", port, VERSION);
+		return new TextResponse("Hello World!", port);
 		
 	}	
 	
