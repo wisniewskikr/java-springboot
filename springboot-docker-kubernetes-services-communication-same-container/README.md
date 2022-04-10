@@ -1,80 +1,38 @@
-LOCALHOST URL
--------------
+* docker build -t custom-text-image ./custom-text-service
+* docker tag custom-text-image localhost:5000/custom-text-image
+* docker push localhost:5000/custom-text-image
 
-* **URL GET Greeting**: http://localhost:8080/greeting/lang/{lang}/name/{name} . For instance: http://localhost:8080/greeting/lang/pl/name/Chris 
-* **URL GET Text**: http://localhost:9090/text/lang/{lang} . For instance: http://localhost:9090/text/lang/pl
-
-**Starting command**:
-* docker-compose up -d
-
-**Additional starting command**:
-* docker-compose up -d --build								: rebuild all projects
-* docker-compose -f docker-compose-fast.yml up -d			: start fast (jar files already exist for all projects)
-* docker-compose -f docker-compose-fast.yml up -d  --build	: start fast with rebuld all projects (jar files already exist for all projects)
-
-**Refresh container commands**:
-* **for custom-greeting-service**: mvn -f custom-greeting-service clean package -PrefreshContainer
-* **for custom-text-service**: mvn -f custom-text-service clean package -PrefreshContainer
-
-
-DESCRIPTION
------------
-
-#####Goal
-The goal of this project is to show how docker compose works for many projects. 
-And how in fast way refresh single container.
-
-We have here 2 REST API Spring Boot projects:
-* **Custom Text Service**: provides greeting text in many languages;
-* **Custom Greeting Service**: connects greeting text with name.
-
-#####Used technologies:
-* **BE**: Spring Boot API
-
-
-IMPLEMENTATION
---------------
-
-Prerequisites:
-* Docker
-
-Implementation details:
-* Add file docker-compose.yml
-* Run it by command: docker-compose up
-
-Most useful commands for docker compose:
-* docker-compose up -d --build														: rebuild and start services
-* docker-compose down																: stop and remove services
-* docker-compose up -d --build --force-recreate --no-deps custom-text-service		: rebuild text-service
-* docker-compose up -d --build --force-recreate --no-deps custom-greeting-service	: rebuild greeting-service
-
-Other commands for docker compose:
-* docker-compose version	: version of docker compose;
-* docker-compose config 	: check if docker-compose.yml file is ok;
-* docker-compose up		: starts containers;
-* docker-compose up -d	: starts containers but in deteach mode. It means that you can work on console;
-* docker-compose up -d --build: rebuilds and starts all containers;
-* docker-compose up -d --build --force-recreate --no-deps mvc-thymeleaf-docker-compose	: rebuilds and starts one specific container;
-* docker-compose down	: stops and removes containers;
-* docker-compose stop		: stops containers;
-* docker-compose ps		: list of containers connected with this compose;
-* docker-compose up -d --scale mvc-thymeleaf-docker-compose=4: starts 4 containers with name “mvc-thymeleaf-docker-compose” (example ports:- 8080-8083:8080)
-* docker-compose build : rebuild containers.
-
-  
-
-LAUNCH
-------
-
-To launch project please run following class: 
-* Application.java
-
-You can also launch project using Maven command:
-* mvn spring-boot:run
-
+* docker build -t custom-greeting-image ./custom-greeting-service
+* docker tag custom-greeting-image localhost:5000/custom-greeting-image
+* docker push localhost:5000/custom-greeting-image
 
 USAGE
 -----
 
-Link to main UI:
-* http://[server]/app/greeting
+Usage steps:
+
+1. Create local registry with `docker run -d -p 5000:5000 --restart=always --name registry-container registry:2`
+2. Build package with `mvn clean package`
+3. Build image with `docker build -t greeting-image .`
+4. Tag the Docker image with `docker tag greeting-image localhost:5000/greeting-image`
+5. Push Docker image to local registry with `docker push localhost:5000/greeting-image`
+6. Deploy application to Kubernetes with `kubectl apply -f deployment.yml`
+7. Check deployment (optional)
+
+    * Display list of deployments with `kubectl get deployments`
+    * Display describe for specific deployment with `kubectl describe deployment greeting-deployment`
+7. Check pod`s logs (optional)
+
+    * Display list of pods with `kubectl get pods`
+    * Display describe for specific pod with `kubectl describe pod <pod_id>`
+    * Display log for specific pod with `kubectl logs <pod_id>`
+8. Visit `http://localhost:31000`
+9. Clean up environment:
+
+    * Delete Kubernetes service with `kubectl delete service greeting-service`
+    * Delete Kubernetes deployment with `kubectl delete deployment greeting-deployment`
+    * Stop registry with `docker stop registry-container`
+    * Remove registry with `docker rm registry-container`
+    * Remove tagged image with `docker rmi localhost:5000/greeting-image`
+    * Remove image with `docker rmi greeting-image`
+    * Remove registry image with `docker rmi registry:2`
