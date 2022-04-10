@@ -5,7 +5,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -27,16 +26,15 @@ public class GreetingController {
 		this.environment = environment;
 	}
 
-	@GetMapping(value="/greeting/lang/{lang}/name/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public GreetingResponse greetingGet(
-			@PathVariable(value = "lang") String lang,
-			@PathVariable(value = "name") String name) {
+	@GetMapping(value="/", produces = MediaType.APPLICATION_JSON_VALUE)
+	public GreetingResponse greetingGet() {
 		
-		ResponseEntity<TextResponse> textResponseEntity = restTemplate.getForEntity("http://localhost:9090/text/lang/" + lang, TextResponse.class);
+		ResponseEntity<TextResponse> textResponseEntity = restTemplate.getForEntity("http://localhost:9090/", TextResponse.class);
 		TextResponse textResponse = textResponseEntity.getBody();		
 		String port = environment.getProperty("local.server.port");
+		
 		return new GreetingResponse(
-				textResponse.getText() + " " + name, 
+				textResponse.getText(), 
 				port, 
 				VERSION, 
 				textResponse.getPort(), 
