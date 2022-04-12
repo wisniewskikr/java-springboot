@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: greeting-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: greeting-container
@@ -32,19 +32,20 @@ spec:
           image: localhost:5000/custom-greeting-image
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 7070
           readinessProbe:
             httpGet:
               path: /actuator/health
-              port: 8080
+              port: 7070
             initialDelaySeconds: 5
           livenessProbe:
             httpGet:
               path: /actuator/health
-              port: 8080
+              port: 7070
             initialDelaySeconds: 5
       restartPolicy: Always
 ---
+
 kind: Service
 apiVersion: v1
 metadata:
@@ -53,8 +54,8 @@ spec:
   type: NodePort
   ports:
     - name: greeting
-      port: 8080
-      targetPort: 8080
+      port: 7070
+      targetPort: 7070
       protocol: TCP
       nodePort: 31000
     - name: text

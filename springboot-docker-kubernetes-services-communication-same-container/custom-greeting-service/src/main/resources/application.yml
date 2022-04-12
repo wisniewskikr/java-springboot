@@ -1,4 +1,7 @@
+server:
+  port: ${port:7070}
+
 custom:
   text:
     service:
-      url: http://custom-text-service:32000/
+      url: http://greeting-container:9090/
