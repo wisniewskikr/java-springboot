@@ -4,4 +4,4 @@ server:
 custom:
   text:
     service:
-      url: http://localhost:32000/
+      url: http://text-service:9090/
