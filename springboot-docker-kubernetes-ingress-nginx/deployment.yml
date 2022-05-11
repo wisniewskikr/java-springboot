@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: greeting-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: greeting-container
@@ -54,5 +54,5 @@ spec:
   selector:
     app: greeting-container
   ports:
-    - port: 80
-      targetPort: 8081
+    - protocol: TCP
+      port: 8081

@@ -9,7 +9,7 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>springboot-thymeleaf-page</artifactId>
+	<artifactId>springboot-thymeleaf-pages-simple</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 
 	<properties>

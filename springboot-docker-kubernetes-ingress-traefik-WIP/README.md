@@ -1,3 +1,5 @@
+* Create lockal domain: open file **Widnows -> System32 -> drivers -> etc -> hosts** and add there new domain **127.0.0.1 example.net**
+
 * kubectl apply -f traefik
 * kubectl apply -f ingress.yml
 

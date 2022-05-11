@@ -1,15 +1,19 @@
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
+
 * Create lockal domain: open file **Widnows -> System32 -> drivers -> etc -> hosts** and add there new domain **127.0.0.1 example.net**
 
 * kubectl apply -f nginx
 * kubectl apply -f ingress.yml
 
 * kubectl delete ingress greeting-ingress
-* kubectl -n kube-system delete configmap traefik-config
-* kubectl -n kube-system delete service traefik-ingress-service
-* kubectl -n kube-system delete deployment traefik-ingress-controller
-* kubectl delete clusterrolebinding traefik-ingress-controller
-* kubectl delete clusterrole traefik-ingress-controller
-* kubectl -n kube-system delete service traefik-web-ui
+* kubectl delete clusterrole nginx-ingress-clusterrole
+* kubectl delete clusterrolebinding nginx-ingress-clusterrole-nisa-binding
+* kubectl delete namespace ingress-nginx
+
+#* kubectl -n ingress-nginx delete configmap nginx-configuration
+#* kubectl -n ingress-nginx delete configmap tcp-services
+#* kubectl -n ingress-nginx delete configmap custom-snippets
+#* kubectl -n ingress-nginx delete deployment nginx-ingress-controller
 
 DESCRIPTION
 -----------
