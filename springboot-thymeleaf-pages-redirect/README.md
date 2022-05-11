@@ -2,10 +2,10 @@ DESCRIPTION
 -----------
 
 ##### Goal
-The goal of this project is to present how to create simple "Hello World" Java Spring Boot application with template Thymeleaf.
+The goal of this project is to present how to create connection between two pages in Java Spring Boot application with template Thymeleaf. 
 
 ##### Details
-This example application displays html page with text: "Hello World".
+This application consists of two pages. First page **Input** contains link which redirects user to the second page. Second page **Output** contains greeting message **Hello World!** and link back to first page.
 
 
 PRECONDITIONS
