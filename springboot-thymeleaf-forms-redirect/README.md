@@ -1,53 +1,29 @@
-SPRING BOOT FORM INPUT AND OUTPUT PAGES
-========================================
-
-
-LOCALHOST URL
--------------
-
-* **URL**: http://localhost:8080
-
-
 DESCRIPTION
 -----------
 
-#####Goal
-The goal of this project is to show to create application with two related pages using technologies Spring Boot MVC and Thymeleaf. 
+##### Goal
+The goal of this project is to present how to create connection between two pages with forms in Java Spring Boot application with template Thymeleaf. 
 
-#####Details
-This project consists following pages:
-* Input Page: this page contains input filed with name;
-* Output Page: this page contains text "Hello World" + name from Input Page.
-
-#####Used technologies:
-* **BE**: Spring Boot MVC
-* **FE**: Thymeleaf
+##### Details
+This application consists of two pages. First page **Input** contains form with field **Name** and button which redirects user to the second page. Second page **Output** contains greeting message **Hello World <name>!** and link back to first page.
 
 
-IMPLEMENTATION
------------
+PRECONDITIONS
+-------------
 
-Implementation details:
-* Create class InputCommand.java;
-* Create class InputController.java;
-* Create file "input.html";
-* Create class OutputCommand.java;
-* Create class OutputController.java;
-* Create file "output.html".
-  
+##### Preconditions - Tools
+* Installed Java
+* Installed Maven
+* Installed Git
 
-LAUNCH
-------
-
-To launch project please run following class: 
-* Application.java
-
-You can also launch project using Maven command:
-* mvn spring-boot:run -Dspring.thymeleaf.cache=false
+##### Preconditions - Actions
+* Download Source Code with `git clone https://github.com/wisniewskikr/java-springboot.git`
 
 
 USAGE
 -----
 
-Link to main UI:
-* http://[server]
+Usage steps:
+1. Start application with `mvn spring-boot:run`
+2. Visit `http://localhost:8080`
+3. Clean up environment with `ctrl + C`
