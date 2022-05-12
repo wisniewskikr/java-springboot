@@ -2,10 +2,10 @@ DESCRIPTION
 -----------
 
 ##### Goal
-The goal of this project is to present how to create simple Java Spring Boot application which displays text "Hello World" as text in a console.
+The goal of this project is to present how to create simple Java Spring Boot application which displays text "Hello World" as Json in a console.
 
 ##### Details
-This example application displays text in console: "Hello World". In browser following text is displayed: "Please check Console - greeting message was displayed there.".
+This example application displays Json in console: "Hello World". In browser following text is displayed: "Please check Console - greeting message was displayed there.".
 
 
 PRECONDITIONS
