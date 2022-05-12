@@ -1,19 +1,13 @@
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
+https://kubernetes.github.io/ingress-nginx/deploy/
+https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-ingress-guide-nginx-example.html
+https://kubernetes.io/docs/concepts/services-networking/ingress/
 
-* Create lockal domain: open file **Widnows -> System32 -> drivers -> etc -> hosts** and add there new domain **127.0.0.1 example.net**
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.0/deploy/static/provider/cloud/deploy.yaml
 
-* kubectl apply -f nginx
-* kubectl apply -f ingress.yml
-
-* kubectl delete ingress greeting-ingress
-* kubectl delete clusterrole nginx-ingress-clusterrole
-* kubectl delete clusterrolebinding nginx-ingress-clusterrole-nisa-binding
-* kubectl delete namespace ingress-nginx
-
-#* kubectl -n ingress-nginx delete configmap nginx-configuration
-#* kubectl -n ingress-nginx delete configmap tcp-services
-#* kubectl -n ingress-nginx delete configmap custom-snippets
-#* kubectl -n ingress-nginx delete deployment nginx-ingress-controller
+kubectl wait --namespace ingress-nginx \
+  --for=condition=ready pod \
+  --selector=app.kubernetes.io/component=controller \
+  --timeout=120s
 
 DESCRIPTION
 -----------
