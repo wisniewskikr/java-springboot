@@ -1,6 +1,6 @@
-https://kubernetes.github.io/ingress-nginx/deploy/
-https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-ingress-guide-nginx-example.html
-https://kubernetes.io/docs/concepts/services-networking/ingress/
+- https://kubernetes.github.io/ingress-nginx/deploy/
+- https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-ingress-guide-nginx-example.html
+- https://kubernetes.io/docs/concepts/services-networking/ingress/
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.0/deploy/static/provider/cloud/deploy.yaml
 
