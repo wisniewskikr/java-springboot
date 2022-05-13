@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.app.commands.CreateCommand;
 import com.example.app.entities.UserEntity;
-import com.example.app.repositories.UserRepository;
+import com.example.app.services.UserService;
 
 @Controller
 public class CreaterController {
 	
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 	
 	@RequestMapping(value="/create", method=RequestMethod.GET)
 	public String displayPage(@ModelAttribute("command")CreateCommand command) {
@@ -24,7 +24,7 @@ public class CreaterController {
 	@RequestMapping(value="/create", method=RequestMethod.POST)
 	public String handleCreate(@ModelAttribute("command")CreateCommand command) {
 		
-		userRepository.save(new UserEntity(command.getName()));
+		userService.save(new UserEntity(command.getName()));
 		return "redirect:/list";
 		
 	}

@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.app.commands.EditCommand;
 import com.example.app.entities.UserEntity;
-import com.example.app.repositories.UserRepository;
+import com.example.app.services.UserService;
 
 @Controller
 public class EditController {
 	
 	@Autowired
-	private UserRepository userService;
+	private UserService userService;
 	
 	@RequestMapping(value="/edit")
 	public String displayPage(@ModelAttribute("command")EditCommand command,

@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.app.commands.ListCommand;
-import com.example.app.repositories.UserRepository;
+import com.example.app.services.UserService;
 
 
 @Controller
 public class ListController {
 	
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 
 	@RequestMapping(value="/list", method = RequestMethod.GET)
 	public String displayPage(@ModelAttribute("command")ListCommand command) {		
-		command.setUsers(userRepository.findAll());
+		command.setUsers(userService.findAll());
 		return "list";		
 	}
 	

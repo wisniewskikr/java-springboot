@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.app.commands.DeleteCommand;
-import com.example.app.repositories.UserRepository;
+import com.example.app.services.UserService;
 
 @Controller
 public class DeleteController {
 	
 	@Autowired
-	private UserRepository userService;
+	private UserService userService;
 	
 	@RequestMapping(value="/delete")
 	public String displayPage(@ModelAttribute("command")DeleteCommand command,

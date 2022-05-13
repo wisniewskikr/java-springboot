@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.app.commands.ViewCommand;
-import com.example.app.repositories.UserRepository;
+import com.example.app.services.UserService;
 
 @Controller
 public class ViewController {
 	
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 	
 	@RequestMapping(value="/view")
 	public String displayPage(@ModelAttribute("command")ViewCommand command,
 			HttpSession session) {
 		
 		Long id = (Long)session.getAttribute("selectedUserId");
-		command.setName(userRepository.findById(id).get().getName());
+		command.setName(userService.findById(id).get().getName());
 		return "view";
 		
 	}
