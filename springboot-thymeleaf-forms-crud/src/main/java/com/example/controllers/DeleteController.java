@@ -1,4 +1,4 @@
-package com.example.app.controllers;
+package com.example.controllers;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.app.commands.DeleteCommand;
-import com.example.app.services.UserService;
+import com.example.commands.DeleteCommand;
+import com.example.services.UserService;
 
 @Controller
 public class DeleteController {

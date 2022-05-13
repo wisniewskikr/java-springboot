@@ -1,4 +1,4 @@
-package com.example.app.entities;
+package com.example.entities;
 
 public class UserEntity {	
 

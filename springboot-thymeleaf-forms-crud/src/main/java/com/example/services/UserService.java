@@ -1,4 +1,4 @@
-package com.example.app.services;
+package com.example.services;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.app.entities.UserEntity;
+import com.example.entities.UserEntity;
 
 @Component
 public class UserService {
