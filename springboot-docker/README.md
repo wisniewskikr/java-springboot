@@ -40,3 +40,17 @@ USAGE
     * Stop container with `docker stop greeting-container`
     * Remove container with `docker rm greeting-container`
     * Remove image with `docker rmi greeting-image`
+    
+USAGE - PUBLISH TO REMOTE REPOSITORY
+------------------------------------
+
+1. Build package with `mvn clean package`
+2. Build image with `docker build -t greeting-image .`
+3. Tag image with `docker tag greeting-image wisniewskikr/greeting-image`
+4. Push image to remote repository with `docker push {docker-id}/greeting-image` . For instance with `docker push wisniewskikr/greeting-image`
+5. Check remote repository with `https://hub.docker.com`. Log in to your **docker-id** account and check that **greeting-image** exists there
+6. Clean up environment:
+
+    * Remove tagged image with `docker rmi wisniewskikr/greeting-image`
+    * Remove image with `docker rmi greeting-image`
+    * Remove **greeting-image** from remote repository `https://hub.docker.com`
